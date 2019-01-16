@@ -133,7 +133,7 @@ public class N2NService extends VpnService {
      * 获取随机MAC
      * @return MAC
      */
-    public static String getRandomMac() {
+    private static String getRandomMac() {
         String mac = "", hex="0123456789abcdef";
         Random rand = new Random();
         for (int i = 0; i < 17; ++i)
@@ -228,11 +228,11 @@ public class N2NService extends VpnService {
         INSTANCE = null;
     }
 
-    public native boolean startEdge(NasParam cmd);
+    private native boolean startEdge(NasParam cmd);
 
-    public native void stopEdge();
+    private native void stopEdge();
 
-    public native boolean getEdgeStatus();
+    private native boolean getEdgeStatus();
 
     /**
      * 上报状态(由JNI调用)
